@@ -1,0 +1,11 @@
+#github steps when saving your code during during project
+
+1. git add .
+2. git commit -m "some message goes here highlighting what you did"
+3. git push origin master
+
+
+
+gem "rake", "~> 12.0"
+
+gemspec
