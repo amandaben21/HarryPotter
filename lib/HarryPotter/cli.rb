@@ -18,7 +18,9 @@ class HarryPotter::CLI
     
     def get_houses
         puts "Which house you like to know about?"
-        house.collect{|h| h.houses}.flatten.uniq
+        house.collect do |h|
+            h.unique
+        end
     end
 
 end
