@@ -2,26 +2,30 @@ class HarryPotter::CLI
     attr_reader :api
     
     def call
-        @api
+    HarryPotter::API.fetch
        puts "Welcome to Harry Potter World"
+       characters
+       spell
     end
 
-    def characters(name)
-        puts "Whats the name of the character you're looking for?"
-        if found
-            puts "found"
+    def characters
+        puts "Here is a list of all the characters names, roles, blood status, and thier species. "
+        HarryPotter::HarryPotter.all.each.with_index(1) do |c,index|
+            puts "#{index}. #{c.name}. #{c.role}. #{c.blood_status}. #{c.species}"
+        end
+        input = gets.chomp.downcase
+    end
+
+    def spell
+        puts "Would you like to check out some spells?"
+        HarryPotter::HarryPotter.all.each do |s,index|
+            puts "#{index}. #{s.spell}. #{s.type}"
+        end
+        
+        if yes?
+            put "yes"
         else
-            puts "please search for a different chararcter"
-        end
-        binding.pry
-    end
-    
-    def get_houses
-        puts "Which house you like to know about?"
-        house.collect do |h|
-            h.unique
+            put "no"
         end
     end
-
-end
-            
+end         
