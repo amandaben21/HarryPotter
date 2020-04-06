@@ -3,19 +3,18 @@ class HarryPotter::CLI
     
     def call
     HarryPotter::API.fetch
-       puts "Welcome to the World of Harry Potter Houses"
-       first
+       puts "Welcome to Hogwart's School Houses"
+       first 
     end
 
-    def first
+    def first # calling all the methods to show up
         houses
         input_house
-        # display_details
         return_details
         final
     end
 
-    def houses
+    def houses #listing the houses name
         puts "Here are a list of houses"
         puts "Which house you will like to look at?"
         HarryPotter::HarryPotter.all.each.with_index(1) do |m,index|
