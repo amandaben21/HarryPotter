@@ -3,5 +3,5 @@
 require "./lib/environment"
 
 HarryPotter::CLI.new.call
-HarryPotter::API.new
+#HarryPotter::API.new
 # HarryPotter::HarryPotter.new

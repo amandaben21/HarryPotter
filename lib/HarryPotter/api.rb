@@ -15,7 +15,7 @@ class HarryPotter::API
   end
   
   def get_houses
-    harrypotter.collect{|m| m.name}.flatten.uniq
+    harrypotter.collect{|m| m.name}.uniq
   end
   
   def get_harrypotter(num)

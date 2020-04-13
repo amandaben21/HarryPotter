@@ -45,7 +45,7 @@ class HarryPotter::CLI
     end
 
     def return_details
-        puts "Please enter a chosen house number"
+        puts "Please enter a another house number"
         m = gets.chomp.downcase
         if chosen?(m, HarryPotter::HarryPotter.all)
             display_details(m.to_i)
